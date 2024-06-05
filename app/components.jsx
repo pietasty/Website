@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import './index.css';
 
 function Square(props) {
   return (
