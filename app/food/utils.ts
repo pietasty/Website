@@ -1,17 +1,19 @@
 import fs from 'fs'
 import path from 'path'
+import { FileData } from '../common/types';
 
-function getJSONFiles(dir){
+function getJSONFiles(dir:string){
     return fs.readdirSync(dir).filter((file) => path.extname(file) === '.json');
 }
 
-function readJSONFile(path){
-    var content = fs.readFileSync(path, 'utf-8');
-    return JSON.parse(content);
+function readJSONFile(path:string){
+    var rawContent = fs.readFileSync(path, 'utf-8');
+    var parse:FileData = JSON.parse(rawContent);
+    return parse;
 }
 
 
-function getFoodPostData(dir) {
+function getFoodPostData(dir:string) {
     var files = getJSONFiles(dir);
     return files.map(f => {
         var {metadata, content} = readJSONFile(path.join(dir, f));
