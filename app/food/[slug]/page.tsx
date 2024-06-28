@@ -1,6 +1,6 @@
 import { getFoodPosts } from '../utils'
-import { baseUrl } from '../../sitemap'
 import { notFound } from 'next/navigation'
+import { Food } from '../../components/food'
 
 export async function generateStaticParams() {
     let posts = getFoodPosts();
@@ -29,23 +29,18 @@ export function generateMetadata({ params }) {
     }
 }
 
-export default function Blog({ params }) {
+export default function Page({ params }) {
     let post = getFoodPosts().find((post) => post.slug === params.slug)
 
     if (!post) {
         notFound()
     }
-
+    
     //TODO: Look into this for the future script application/ld+json
     return (
         <section>
             {/* script application/ld+json goes here */}
-            <h1 className="title font-semibold text-2xl tracking-tighter">
-                {post.metadata.title}
-            </h1>
-            <article className="prose">
-                <p>{post.content}</p>
-            </article>
+            <Food metadata={post.metadata} content={post.content} />
         </section>
     )
 }
