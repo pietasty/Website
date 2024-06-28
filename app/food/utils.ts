@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { FileData } from '../common/types';
+import { FileData } from '../utils/types';
 
 function getJSONFiles(dir:string){
     return fs.readdirSync(dir).filter((file) => path.extname(file) === '.json');

@@ -1,5 +1,5 @@
 import {Tag} from './tag'
-import { FileData } from '../common/types'
+import { FileData } from '../utils/types'
 
 function getValueContent(value:string|string[]){
     if(Array.isArray(value)){
