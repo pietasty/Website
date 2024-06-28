@@ -1,8 +1,14 @@
 {
     "metadata":{
-        "title": "Depot Eatery",
-        "website": "depoteatery.co.nz",
-        "city": "Auckland"
+        "title": "Depot Eatery"
     }, 
-    "content": "This place is fire good shit. 10/10"
+    "content": {
+        "cuisine": ["Western", "New Zealand"],
+        "rating": ["Recommended"],
+        "website": "depoteatery.co.nz",
+        "city": "Auckland",
+        "region": "Central",
+        "suburb": "City Center",
+        "comments": "This place is fire good shit. 10/10"
+    }
 }
