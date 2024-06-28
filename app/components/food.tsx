@@ -1,6 +1,7 @@
 import {Tag} from './tag'
+import { FileData } from '../common/types'
 
-function getValueContent(value){
+function getValueContent(value:string|string[]){
     if(Array.isArray(value)){
         return (
             <div>
@@ -11,7 +12,7 @@ function getValueContent(value){
     return <p>{value}</p>
 }
 
-function getContent(key, value){
+function getContent(key:string, value:string|string[]){
     return (
         <div>
             <h4>{key}:</h4>
@@ -20,14 +21,14 @@ function getContent(key, value){
     )
 }
 
-export function Food({metadata, content}) {
+export function Food(props:FileData) {
     return (
         <div>
             <h1 className="title font-semibold text-2xl tracking-tighter">
-                {metadata.title}
+                {props.metadata.title}
             </h1>
             <article>
-                { Object.entries(content).map(kv => getContent(...kv)) }
+                { Object.entries(props.content).map(kv => getContent(...kv)) }
             </article>
         </div>
     );
