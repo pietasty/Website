@@ -1,6 +1,6 @@
 import { getFoodPosts } from '../utils'
 import { notFound } from 'next/navigation'
-import { Food } from '../../components/food'
+import { FoodPage } from '../../components/foodPage'
 
 export async function generateStaticParams() {
     let posts = getFoodPosts();
@@ -40,7 +40,7 @@ export default function Page({ params }) {
     return (
         <section>
             {/* script application/ld+json goes here */}
-            <Food metadata={post.metadata} content={post.content} />
+            <FoodPage metadata={post.metadata} content={post.content} />
         </section>
     )
 }

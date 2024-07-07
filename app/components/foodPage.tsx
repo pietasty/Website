@@ -1,5 +1,5 @@
 import {Tag} from './tag'
-import { FileData } from '../utils/types'
+import { Metadata, Content } from '../utils/types'
 
 function getValueContent(value:string|string[]){
     if(Array.isArray(value)){
@@ -21,15 +21,19 @@ function getContent(key:string, value:string|string[]){
     )
 }
 
-export function Food(props:FileData) {
+
+export function FoodPage({metadata, content}:{
+    metadata: Metadata,
+    content: Content
+}) {
     return (
         <div>
             <h1 className="title font-semibold text-2xl tracking-tighter">
-                {props.metadata.title}
+                {metadata.title}
             </h1>
-            <article>
-                { Object.entries(props.content).map(kv => getContent(...kv)) }
-            </article>
+            <div>
+                { Object.entries(content).map(kv => getContent(...kv)) }
+            </div>
         </div>
     );
 }
