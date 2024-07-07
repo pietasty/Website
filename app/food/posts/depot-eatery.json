@@ -2,13 +2,15 @@
     "metadata":{
         "title": "Depot Eatery"
     }, 
+    "header": {
+        "title": "Depot Eatery",
+        "website": "https://depoteatery.co.nz"
+    },
     "content": {
         "cuisine": ["Western", "New Zealand"],
-        "rating": ["Recommended"],
-        "website": "depoteatery.co.nz",
-        "city": "Auckland",
-        "region": "Central",
-        "suburb": "City Center",
-        "comments": "This place is fire good shit. 10/10"
+        "rating": ["Highly Recommended"],
+        "favourite": ["Fish Belly", "Cookie skillet"],
+        "comments": "This place is fire good shit. 10/10",
+        "location": ["Auckland", "Central", "City Center"]
     }
 }

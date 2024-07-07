@@ -16,12 +16,13 @@ function readJSONFile(path:string){
 function getFoodPostData(dir:string) {
     var files = getJSONFiles(dir);
     return files.map(f => {
-        var {metadata, content} = readJSONFile(path.join(dir, f));
+        var {metadata, header, content} = readJSONFile(path.join(dir, f));
         var slug = path.basename(f, path.extname(f));
 
         return {
             slug,
             metadata,
+            header,
             content
         }
     });
