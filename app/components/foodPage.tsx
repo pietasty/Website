@@ -29,7 +29,7 @@ function FoodHeader({data} : {data:Header}){
     ) : null
 
     return(
-        <div className="my-5 px-2 rounded-lg shadow border border-grey-900">
+        <div className="my-5 px-2 rounded-lg shadow bg-light-warm">
             <h1 className="text-5xl font-semibold text-gray-900">{data.title}</h1>
             <div className="flex flex-row mt-4 space-x-4">
                 {website}
