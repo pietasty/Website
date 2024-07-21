@@ -1,6 +1,45 @@
 import { TagList } from './tag'
 import { Header, Content } from '../utils/types'
-import { niceName, getUrlHostName } from '../utils/utils';
+import { niceName } from '../utils/utils';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+
+
+function FoodHeader({data} : {data:Header}){
+    var website = data.website ? (
+        <a 
+        className="flex flex-row text-sm leading-6 text-gray-900"
+        href={data.website} target="_blank" rel="noopener noreferrer"
+        >
+            <FontAwesomeIcon icon={faLink} className="h-6 w-6"/>
+            <p>Website</p>
+        </a>
+    ) : null;
+
+    var instagram = data.instagram ? (
+        <a 
+        className="flex flex-row text-sm leading-6 text-gray-900"
+        href={data.instagram} target="_blank" rel="noopener noreferrer"
+        >
+            <FontAwesomeIcon icon={faInstagram} className="h-6 w-6"/>
+            <p>Instagram</p>
+        </a>
+    ) : null
+
+    return(
+        <div className="my-5 px-2 rounded-lg shadow border border-grey-900">
+            <h1 className="text-5xl font-semibold text-gray-900">{data.title}</h1>
+            <div className="flex flex-row mt-4 space-x-4">
+                {website}
+                {instagram}
+            </div>
+
+        </div>
+    )
+}
+
 
 function FoodSection({
     title,
@@ -31,18 +70,9 @@ export function FoodPage({ header, content }: {
     header: Header,
     content: Content
 }) {
-    var link = null;
-    if(header.website !== null){
-        var hostname = getUrlHostName(header.website);
-        link = <a href={header.website} target="_blank" rel="noopener noreferrer">{hostname}</a>
-    }
-
     return (
         <div>
-            <div className="px-4 xs:px-0">
-                <h3 className="text-base font-semibold leading-7 text-gray-900">{header.title}</h3>
-                <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">{link}</p>
-            </div>
+            <FoodHeader data={header}/>
             <div className="mt-6">
                 {Object.entries(content).map((kv, i) => {
                     var [k, v] = kv;

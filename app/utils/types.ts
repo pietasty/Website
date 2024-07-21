@@ -2,7 +2,8 @@ import { Metadata } from "next"
 
 export type Header = {
     title: string,
-    website?: string
+    website?: string,
+    instagram?: string
 }
 
 export type Content = {
