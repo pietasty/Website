@@ -40,7 +40,7 @@ export default function Page({ params }) {
     return (
         <section>
             {/* script application/ld+json goes here */}
-            <FoodPage header={post.header} content={post.content} />
+            <FoodPage post={post} />
         </section>
     )
 }
