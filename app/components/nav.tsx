@@ -16,7 +16,7 @@ export function Navbar() {
     return (
         <div className="tracking-tight bg-light-warm rounded-lg">
             <nav
-                className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+                className="flex justify-center md:overflow-auto scroll-pr-6"
                 id="nav"
             >
                 <div className="flex flex-row space-x-0 pr-10">

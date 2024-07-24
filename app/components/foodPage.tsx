@@ -9,7 +9,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function FoodHeader({header} : {header:Header}){
     return(
-        <div className="mt-5 p-2 rounded-lg shadow bg-light-warm">
+        <div className="mt-5 p-2 rounded-lg shadow bg-light-warm flex flex-col items-center">
             <h1 className="text-5xl font-semibold text-gray-900">{header.title}</h1>
             <div className="mt-5">
                 <TagList list={header.cuisine}/>
