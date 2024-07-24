@@ -2,16 +2,16 @@ type TagProps = {
     text: string,
     bgColour?: string,
     textColour?: string,
-    ringColour?: string
+    borderColor?: string
 }
 
 export function Tag({
     text,
-    bgColour = "gray-50",
-    textColour = "gray-950",
-    ringColour = "gray-850/10"
+    bgColour = "white-ish",
+    textColour = "gray-900",
+    borderColor = "gray-900"
 }: TagProps){
-    var className = `inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-insert bg-${bgColour} text-${textColour} ring-${ringColour}`;
+    var className = `items-center rounded-md px-2 py-1 text-sm font-medium bg-${bgColour} text-${textColour} border border-${borderColor}`;
 
     return (
         <span key={text} className={className}>{text}</span>
@@ -32,7 +32,7 @@ export function TagList({
     });
 
     return (
-        <div>
+        <div className="mt-2 flex flex-row space-x-3">
             {propsList.map(l =>
                 <Tag {...l}/>
             )}
