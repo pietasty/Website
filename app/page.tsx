@@ -1,13 +1,9 @@
-export default function Page(){
-  return (
-    <section>
-      <h1 className="mb-8 text-4xl font-semibold">
-        Interests
-      </h1>
-      <ul className="list-disc">
-        <li>Food</li>
-        <li>Planes</li>
-      </ul>
-    </section>
-  )
+import { TopFoods } from "./components/topFoods"
+
+export default function HomePage() {
+    return (
+        <section className="mt-5 p-2 rounded-lg shadow bg-light-warm flex flex-col items-center">
+            <TopFoods />
+        </section>
+    )
 }

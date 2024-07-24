@@ -1,0 +1,23 @@
+{
+    "metadata":{
+        "title": "Depot Eatery"
+    }, 
+    "header": {
+        "title": "Depot Eatery",
+        "cuisine": ["$$$", "Western", "Kiwi"]
+    },
+    "content": {
+        "rating": ["Highly Recommended"],
+        "comments": ["This place is number 3 on my all time restaurant list.",
+            "I will go out of my way to recommend and go to this place.", 
+            "It seems the Fish Belly is no longer on the menu (hopefully it comes back)", 
+            "Cookie Skillet is always RNG to see if it is on the dessert menu.",
+            "Other fire foods includes: 'On the Side', 'Raw Bar', Pork Hock, Half Chicken, Bone Marrow"],
+
+        "location": ["Auckland", "Central", "City Center"],
+        "link": {
+            "website": "https://depoteatery.co.nz",
+            "instagram": "https://www.instagram.com/depoteatery"
+        }
+    }
+}
