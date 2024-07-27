@@ -14,7 +14,7 @@ const favs:ListInfo[] = [
 export function TopFoods(){
     return (
         <div className="mt-5 p-2 rounded-lg shadow bg-light-warm flex flex-col items-center">
-            <div className="flex flex-col divide-y divide-gray-400 space-y-2">
+            <div className="flex flex-col divide-y divide-gray-400 space-y-1">
                 <p className="text-2xl font-semibold text-gray-900">My Favourite Restaurants in Auckland</p>
                 <OrderedLinkList list={favs} />
             </div>

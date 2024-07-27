@@ -65,7 +65,6 @@ function LinksSection({links}: {links: ContentLink}){
     )
 }
 
-
 function AboutSection({location, links}: {
     location: string[],
     links?: ContentLink
