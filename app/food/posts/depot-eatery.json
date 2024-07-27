@@ -16,7 +16,7 @@
 
         "location": ["Auckland", "Central", "City Center"],
         "maps": "Depot+Eatery,Auckland",
-        "link": {
+        "links": {
             "website": "https://depoteatery.co.nz",
             "instagram": "https://www.instagram.com/depoteatery"
         }

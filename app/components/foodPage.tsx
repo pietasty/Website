@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { GoogleMapsEmbed } from '@next/third-parties/google'
+import { niceName } from '../utils/utils';
 
 
 function FoodHeader({header} : {header:Header}){
@@ -34,37 +35,44 @@ function RatingSection({rating, comments}: {
     )
 }
 
-function AboutSection({location, link}: {
-    location: string[],
-    link?: ContentLink
-}){
-    var website = link?.website ? (
-        <a 
-        className="text-sm leading-6 text-gray-900 flex items-center hover:bg-warm"
-        href={link.website} target="_blank" rel="noopener noreferrer"
-        >
-            <FontAwesomeIcon icon={faLink} className='h-7 w-7 mr-1'/>
-            Website
-        </a>
-    ) : null;
+const icons = {
+    website: faLink,
+    instagram: faInstagram
+}
 
-    var instagram = link?.instagram ? (
-        <a 
-        className="text-sm leading-6 text-gray-900 flex items-center"
-        href={link.instagram} target="_blank" rel="noopener noreferrer"
-        >
-            <FontAwesomeIcon icon={faInstagram} className='h-7 w-7 mr-1'/>
-            Instagram
-        </a>
-    ) : null
-    
+function ExternalLinks({name, link}: {name: string, link: string}){
     return (
-        <div className="rounded-lg shadow bg-light-warm p-2 flex flex-col items-center hover:bg-warm" >
-            <p className="text-lg font-semibold text-gray-900">About</p>
-            <div className="mt-2">
-                {website}
-                {instagram}
-            </div>
+        <a 
+            className="text-sm leading-6 text-gray-900 flex items-center hover:bg-warm"
+            href={link} target="_blank" rel="noopener noreferrer"
+        >
+            <FontAwesomeIcon icon={icons[name]} className='h-7 w-7 mr-1'/>
+            {niceName(name)}
+        </a>
+    )
+}
+function LinksSection({links}: {links: ContentLink}){
+    return (
+        <div className="flex flex-col items-center">
+            <p className="text-lg font-semibold text-gray-900">Links</p>
+            {
+                Object.entries(links).map((kv) => {
+                    var [k,v] = kv
+                    return <ExternalLinks name={k} link={v}/>
+                })
+            }
+        </div>
+    )
+}
+
+
+function AboutSection({location, links}: {
+    location: string[],
+    links?: ContentLink
+}){
+    return (
+        <div className="rounded-lg shadow bg-light-warm p-2 flex flex-col items-center" >
+            { links && <LinksSection links={links} />}
             <p className="text-lg font-semibold text-gray-900">Location</p>
             <TagList list={location} />
         </div>
@@ -75,7 +83,7 @@ function FoodContent({content} : {content:Content}){
     return(
         <div className='mt-5 grid grid-cols-1 px-0 gap-4 sm:grid-cols-2'>
             <RatingSection rating={content.rating} comments={content.comments}/>
-            <AboutSection location={content.location} link={content.link}/>
+            <AboutSection location={content.location} links={content.links}/>
         </div>
     )
 }
