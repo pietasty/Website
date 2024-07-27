@@ -1,3 +1,5 @@
 # [yubowu.nz](https://yubowu.nz)
 
-Currently it is just the react tutorial
+My Personal Website
+Currently working on my food recommendations in Auckland
+Content about Planes will be next
