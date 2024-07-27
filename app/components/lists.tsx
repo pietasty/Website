@@ -29,7 +29,7 @@ export function OrderedLinkList({list}:{list: ListInfo[]}){
             {
                 list.map(l => {
                     return <li>
-                        <Link href={l.link}>{l.text}</Link>
+                        <Link className="hover:bg-warm" href={l.link}>{l.text}</Link>
                     </li>
                 })
             }

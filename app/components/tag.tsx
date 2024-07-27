@@ -11,7 +11,7 @@ export function Tag({
     textColour = "gray-900",
     borderColor = "gray-900"
 }: TagProps){
-    var className = `items-center rounded-md px-2 py-1 text-sm font-medium bg-${bgColour} text-${textColour} border border-${borderColor}`;
+    var className = `items-center rounded-md px-2 py-1 text-sm font-medium bg-${bgColour} text-${textColour} border border-${borderColor} hover:bg-warm`;
 
     return (
         <span key={text} className={className}>{text}</span>

@@ -40,10 +40,10 @@ function AboutSection({location, link}: {
 }){
     var website = link?.website ? (
         <a 
-        className="text-sm leading-6 text-gray-900 flex items-center"
+        className="text-sm leading-6 text-gray-900 flex items-center hover:bg-warm"
         href={link.website} target="_blank" rel="noopener noreferrer"
         >
-            <FontAwesomeIcon icon={faLink}  className='h-7 w-7 mr-1'/>
+            <FontAwesomeIcon icon={faLink} className='h-7 w-7 mr-1'/>
             Website
         </a>
     ) : null;
@@ -59,7 +59,7 @@ function AboutSection({location, link}: {
     ) : null
     
     return (
-        <div className="rounded-lg shadow bg-light-warm p-2 flex flex-col items-center">
+        <div className="rounded-lg shadow bg-light-warm p-2 flex flex-col items-center hover:bg-warm" >
             <p className="text-lg font-semibold text-gray-900">About</p>
             <div className="mt-2">
                 {website}
