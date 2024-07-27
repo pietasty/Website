@@ -15,7 +15,8 @@ export type Content = {
     rating: string[],
     comments: string[],
     location: string[],
-    link: ContentLink
+    link?: ContentLink,
+    maps?: string
 }
 
 export type FileData = {

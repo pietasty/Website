@@ -15,6 +15,7 @@
             "Other fire foods includes: 'On the Side', 'Raw Bar', Pork Hock, Half Chicken, Bone Marrow"],
 
         "location": ["Auckland", "Central", "City Center"],
+        "maps": "Depot+Eatery,Auckland",
         "link": {
             "website": "https://depoteatery.co.nz",
             "instagram": "https://www.instagram.com/depoteatery"
